@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import "../styles/header.css";
 
 
-function Header() {
-    let buttonName = "Some button";
+function Header(props) {
+    
     let [count, setNewCount] = useState (0);
     const handleClick = () => {
         setNewCount(count + 1);
@@ -11,7 +11,7 @@ function Header() {
     return (
         <header>Headerr
             <button className={"some-button"} onClick={ handleClick }>
-                {buttonName}, clicked: {count} times   </button>
+                {props.buttonName}, clicked: {count} times </button>
         </header>
     )
 }

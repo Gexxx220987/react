@@ -1,18 +1,18 @@
-import React, { Component, Fragment } from "react";
+import React, { Fragment } from "react";
 import "../styles/App.css";
 
 import Header from "./header";
 import Main from "./main";
 
-class App extends Component {
-    render() {
+function App () {
+    const buttonName = "Some button update 2";
+
         return (
             <Fragment>
-              <Header />
+              <Header buttonName={buttonName} />
                <Main />
             </Fragment>
         );
     }
-}
 
 export default App;
