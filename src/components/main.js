@@ -9,7 +9,7 @@ function Main() {
             <main>
                 <Countries />
             </main>
-        )
+        );
     }
 
 
