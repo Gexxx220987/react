@@ -8,3 +8,9 @@ header {
     align-items: center;
     text-align: center;
 }
+
+header .some-button {
+    padding: 10px 15px;
+    border-radius: 5px;
+    border: 1px solid gray;
+}
