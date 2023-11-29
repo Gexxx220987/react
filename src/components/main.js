@@ -1,17 +1,16 @@
-import React, { Component } from "react";
-
+import React from "react";
+import Countries from "./countries";
 import "../styles/main.css";
 
-class Main extends Component {
-    render() {
+function Main() {
+
+    
         return (
             <main>
-                <div>
-                    <h1>Hello 1234</h1>
-                </div>
+                <Countries />
             </main>
         )
     }
-}
+
 
 export default Main;
