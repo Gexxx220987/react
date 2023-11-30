@@ -1,26 +1,36 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
+import Table from 'react-bootstrap/Table';
+import Country from "./country";
+
+
+import "../styles/countries.css";
 
 function Countries() {
     const [countries, setCountries] = useState([]);
-    if(!countries.length){
-    axios.get("https://restcountries.com/v3.1/all").then(res => {
-        console.log(res);
-        setCountries(res.data);
-    });
-    }
+
+    useEffect(() => {
+        axios.get("https://restcountries.com/v3.1/all").then(res => {
+            console.log(res);
+            setCountries(res.data);
+        });
+    }, []); // Добавлен пустой массив зависимостей для выполнения запроса только один раз при монтировании компонента
+
     return (
-        <table>
+        <Table striped bordered hover className={"countries"}>
             <thead>
-                <tr><th>Name</th><th>Capital</th></tr>
+                <tr>
+                    <th>Name</th>
+                    <th>Capital</th>
+                    <th></th>
+                </tr>
             </thead>
-            <tbody> 
-                {countries.map(country => <tr>
-                    <td>{country.name}</td>
-                    <td>{country.capital}</td>
-                    </tr>)}
+            <tbody>
+                {countries.map(country => <Country key={country.name} country={country}/>)(
+                   
+                )}
             </tbody>
-        </table>
+        </Table>
     );
 }
 
