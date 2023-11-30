@@ -26,9 +26,7 @@ function Countries() {
                 </tr>
             </thead>
             <tbody>
-                {countries.map(country => <Country key={country.name} country={country}/>)(
-                   
-                )}
+                {countries.map(country => <Country key={country.id} country={country}/>)}
             </tbody>
         </Table>
     );
