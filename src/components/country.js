@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
+import "../styles/country.css";
 
 
 function Country(props) {
